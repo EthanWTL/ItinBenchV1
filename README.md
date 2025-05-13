@@ -1,3 +1,10 @@
+# Installation
+```
+git clone https://github.com/EthanWTL/ItinBenchV1.git
+conda create --name <env> --file requirement.txt
+```
+
+
 # Dataset Link: 
 
 Here is the link to the huggingface dataset: [Link](https://huggingface.co/datasets/EthanWTL81/ItinBench)
