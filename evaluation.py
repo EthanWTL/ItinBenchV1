@@ -1117,9 +1117,12 @@ def getOneMacro(results,passRate):
 
 if __name__ == "__main__":
     args = parse_args()
-    restaurants = load_dataset("EthanWTL81/ItinBench", "restaurant", split="test")
-    hotels = load_dataset("EthanWTL81/ItinBench", "hotel", split="test")
-    attractions = load_dataset("EthanWTL81/ItinBench", "attraction", split="test")
+    with open ('Dataset/restaurants.jsonl', 'r') as f:
+        restaurants = [json.loads(line.strip()) for line in f]
+    with open ('Dataset/hotels.jsonl', 'r') as f:
+        hotels = [json.loads(line.strip()) for line in f]
+    with open ('Dataset/attractions.jsonl', 'r') as f:
+        attractions = [json.loads(line.strip()) for line in f]
 
     #choose model and task
     model = args.model
