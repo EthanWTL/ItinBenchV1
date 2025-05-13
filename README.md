@@ -1,3 +1,8 @@
+# Installation
+```
+git clone 
+
+
 # Dataset Link: 
 
 Here is the link to the huggingface dataset: [Link](https://huggingface.co/datasets/EthanWTL81/ItinBench)
