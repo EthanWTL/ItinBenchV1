@@ -40,7 +40,7 @@ Avaliable Parameters (Default in **bold** for lower cost):
 python sole_planning.py --model gpt4o --task filteredDataRouteOP --numPlan 1 --OPENAI_API_KEY your_api_key_here
 ```
 
-**Note**: Experiementing with GPT4o is recommended for cost and easier to request for API. Llama uses Ollama as the server thus need to configure locally. 
+**Note**: Experiementing with GPT4o is recommended for cost and easier to request for API. Llama uses Ollama as the server thus need to configure locally. Recently, OPENAI set up a Token Per Minute limitation thus the all data tasks cannot be processed for now. We are working on alternatives. For now, you can experiements with tool use and filtered data tasks without problem with OPEN AI.
 
 ---
 

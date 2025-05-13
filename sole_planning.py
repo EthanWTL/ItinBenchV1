@@ -17,7 +17,7 @@ def parse_args():
     parser.add_argument('--GEMINI_API_KEY', type=str, help='Input Gemini API Key', required=False)
     parser.add_argument('--model', type=str, help='Input model name', required=False, default='gpt4o')
     parser.add_argument('--task', type=str, help='Input task name', required=False, default='filteredDataRouteOP')
-    parser.add_argument('--numPlan', type=int, help='Input number of plans', required=False, default=5)
+    parser.add_argument('--numPlan', type=int, help='Input number of plans', required=False, default=1)
 
     args = parser.parse_args()
     return args
@@ -69,12 +69,15 @@ if __name__ == '__main__':
 
     #get data
     if 'all' in task:
-        given_information = load_dataset("EthanWTL81/ItinBench", "data all", split="test")[0]['all_data']
+        with open ('Dataset/all_data.json', 'r') as f:
+            given_information = json.load(f)
     else:
-        given_informations = load_dataset("EthanWTL81/ItinBench", "filtered data", split="test")
+        with open ('Dataset/filtered_data.jsonl', 'r') as f:
+            given_informations = [json.loads(line) for line in f]
 
     #human query
-    humanquerys = load_dataset("EthanWTL81/ItinBench", "human query", split="test")
+    with open ('Dataset/humanQuerys.jsonl', 'r') as f:
+        humanquerys = [json.loads(line) for line in f]
 
     for i in range(args.numPlan):
         query = humanquerys[i]['query']

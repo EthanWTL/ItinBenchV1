@@ -415,7 +415,8 @@ def getFailureAndPreferenceList(model,task,numPlan):
     with open(f'Output/{model}/evals/{task}.jsonl', 'r') as f:
         plans = [json.loads(line) for line in f]
 
-    evals = load_dataset("EthanWTL81/ItinBench", "evals", split="test")
+    with open('Dataset/evals.jsonl', 'r') as f:
+        evals = [json.loads(line) for line in f]
 
     for i in range(numPlan):
         
@@ -1022,7 +1023,8 @@ def getParameterACC(model,numPlan):
     with open (f'Output/{model}/plans/toolUseLogs.jsonl', 'r') as f:
         logs = [json.loads(line.strip()) for line in f]
     
-    evals = load_dataset("EthanWTL81/ItinBench", "evals", split="test")
+    with open ('Dataset/evals.jsonl', 'r') as f:
+        evals = [json.loads(line.strip()) for line in f]
     
     for log,eval in zip(logs,evals):
         #print(eval['eval_info'])
@@ -1038,7 +1040,8 @@ def getValidRate(model,task,numPlan,passRate):
     with open(f'Output/{model}/evals/{task}.jsonl', 'r') as f:
         plans = [json.loads(line) for line in f]
 
-    evals = load_dataset("EthanWTL81/ItinBench", "evals", split="test")
+    with open ('Dataset/evals.jsonl', 'r') as f:
+        evals = [json.loads(line.strip()) for line in f]
 
     validated = 0
 

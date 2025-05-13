@@ -509,7 +509,8 @@ if __name__ == "__main__":
     toolUseScratchpads = []
     toolUseLogs = []
 
-    humanquerys = load_dataset("EthanWTL81/ItinBench", "human query", split="test")
+    with open ('Dataset/humanQuerys.jsonl') as file:
+        humanquerys = [json.loads(line) for line in file]
 
     for i in range (args.numPlan):
         query = humanquerys[i]['query']
