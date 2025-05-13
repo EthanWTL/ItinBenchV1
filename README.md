@@ -1,7 +1,9 @@
-# Dataset Link: [Link](https://huggingface.co/datasets/EthanWTL81/ItinBench)
+# Dataset Link: 
+
+Here is the link to the huggingface dataset: [Link](https://huggingface.co/datasets/EthanWTL81/ItinBench)
 
 # Generation
-### Sole Planning
+### 1. Sole Planning
 ``` 
 python sole_planning.py
 ```
@@ -24,7 +26,7 @@ python sole_planning.py --model gpt4o --task filteredDataRouteOP --numPlan 1 --O
 
 ---
 
-### Tool Use
+### 2. Tool Use
 ```
 python tool_use.py
 ```
@@ -41,7 +43,7 @@ Avaliable Parameters (Default in **bold** for lower cost):
 python tool_use.py --model gpt4o --numPlan 1 --apikey your_api_key_here
 ```
 ---
-### Extraction
+# Extraction
 
 Extraction use GPT4o to make sure the key information extraction is correct. so apikey need to be provided.
 
@@ -50,7 +52,7 @@ Extraction use GPT4o to make sure the key information extraction is correct. so 
 python extraction.py --model your_model --task your_task --numPlan number_of_plan --apikey openai_api_key
 ```
 ---
-### Evaluation
+# Evaluation
 All evaluation code is provided. Here we provide the example for the main evaluation.
 
 ```--model```: **gpt4o**, mistral, gemini, llama3.1
