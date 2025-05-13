@@ -1,6 +1,8 @@
 # Installation
 ```
-git clone 
+git clone https://github.com/EthanWTL/ItinBenchV1.git
+conda create --name <env> --file requirement.txt
+```
 
 
 # Dataset Link: 
