@@ -1,13 +1,24 @@
 # Installation
+Clone the repo
 ```
 git clone https://github.com/EthanWTL/ItinBenchV1.git
+```
+Create a new conda env
+```
 conda create --name <env> --file requirement.txt
 ```
+Install to current conda env
+```
+pip install -r requirements.txt
+```
 
+---
 
 # Dataset Link: 
 
 Here is the link to the huggingface dataset: [Link](https://huggingface.co/datasets/EthanWTL81/ItinBench)
+
+---
 
 # Generation
 ### 1. Sole Planning
